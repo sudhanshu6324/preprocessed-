@@ -1,0 +1,11 @@
+Suppose we want to find 
+		
+	a + b + c + d = S
+
+A brute force method wud take N^4 comlexity , So we try  to solve (a + b ) + (c + d ) = S
+
+that is x + y = S 
+
+again y = S - x = Alpha
+
+implies , produce all the x  and y values with N^2 complexity and check if there exist any common element in x and y

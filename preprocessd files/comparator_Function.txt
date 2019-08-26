@@ -1,0 +1,19 @@
+
+
+
+// for comparing vector < pair < int ,int> >
+// returns position for first element satisfying this property
+// upper_bound(v.begin(), v.end() , x , cmp);
+bool cmp(int n, pair<int, int> const& p)
+{
+    return (p.first > n);
+}
+
+
+// for comparing vector < pair < int ,int> >
+// returns position for first element NOT satisfying this property
+// lower_bound(v.begin(), v.end() , x , cmp);
+bool cmp(pair<int, int> const& p, int a)
+{
+    return p.first < a;
+}

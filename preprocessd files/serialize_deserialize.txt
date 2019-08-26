@@ -1,0 +1,40 @@
+// Serialize Or Deserialize ( Binary Tree and M Ary Tree)
+
+// for M ary Tree refer https://www.geeksforgeeks.org/serialize-deserialize-n-ary-tree/
+// This is basically a way to store the binary tree in a file and then recovering it back
+
+// Serialize
+// Done using preorder traversal
+
+void serialize(Node* root){
+	if(root == NULL){
+		v.push_back(-1);	// -1 indicates NULL
+	}
+	
+	v.push_back(root->info);
+	
+	serialize(root->left);
+	serialize(root->right);
+}
+
+
+// Deserialise 
+// it's should be known that -1 is used to indicate the NULL
+// also array size should be known , also that the tree is stored using 
+// preorder traversal ( root - left - right )
+
+
+idx = 0; // Global var
+Node* deserialize(vector<int> v){
+	if(idx == v.size() || v[idx] == -1){
+		idx++;
+		return NULL;
+	}
+	Node *temp = new Node();
+	temp->info = v[idx];
+	idx++; 
+	temp->left = deserialise(v);
+	temp->right = deserialise(v);
+
+	return temp;
+}

@@ -1,0 +1,19 @@
+one of techique invloves using an integer to store substring information in bits of integer (Particularly helpful in string matching)
+
+Since there are only 4 different letters we need to distinguish, so enumeration or something similar can perfectly handle this case;
+
+
+
+// https://leetcode.com/problems/repeated-dna-sequences/discuss/53856/Beating-100-submission-in-C-well-explained-and-commented.
+
+Given the ASCII Code for them are A - 65, C - 67, G - 71, T - 84
+
+(X - 'A' + 1)%5 will be A -> 1, C -> 3, G -> 2, T -> 0 and can be represented by only two-bits!
+10 letters can be represented by 20-bits which is smaller than 32 bits of an integer; so we can just use a integer to represent the 10-letter-length substring.
+
+    the basic idea has been presented, do not be too lazy to read code -> reading effectively is quite essential.
+
+We can now handle it using bit manipulation and hash table by just traversing one single round.
+
+    hashTable[hashNum = (hashNum << 2 | (s[i] - 'A' + 1) % 5) & 0xfffff]
+

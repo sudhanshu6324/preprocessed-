@@ -1,0 +1,5 @@
+while(cin>>n){
+
+}
+
+// When no of inputs are not known

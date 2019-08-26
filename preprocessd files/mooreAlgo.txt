@@ -1,0 +1,16 @@
+this to calculate the majority no among a given set of nos
+
+findCandidate(a[], size)
+1.  Initialize index and count of majority element
+     maj_index = 0, count = 1
+2.  Loop for i = 1 to size – 1
+    (a) If a[maj_index] == a[i]
+          count++
+    (b) Else
+        count--;
+    (c) If count == 0
+          maj_index = i;
+          count = 1
+3.  Return a[maj_index]
+
+finally if the maj_index element has freq > n/2

@@ -1,0 +1,43 @@
+			 		Condition For Intersection of Rectangle
+
+Suppose we have two rectangles R1 and R2. Let (x1, y1) be the location of the bottom-left corner of
+ R1 and (x2, y2) be the location of its top-right corner. Similarly, let (x3, y3) and (x4, y4) be the respective corner locations for R2. The intersection of R1 and R2 will be a rectangle R3 whose bottom-left corner is at (max(x1, x3), max(y1, y3)) and top-right corner at (min(x2, x4), min(y2, y4)). If max(x1, x3) > min(x2, x4) or max(y1, y3) > min(y2, y4) then R3 does not exist, ie R1 and R2 do not intersect. This method can be extended to intersection in more than 2 dimensions as
+
+******************************************************************************************************              		
+		Pick's Theorem
+
+B = number of lattice points on the boundary of the polygon
+I = number of lattice points in the interior of the polygon
+
+the area of this polygon is then given by:
+
+	Area = B/2 + I - 1 
+
+******************************************************************************************************
+			  		 Euler Characteristics 
+
+	vertices - edges - faces = Euler Characteristics
+Note : All palanar figures have EC  = 2 (Proved By Induction)
+
+******************************************************************************************************
+
+					Euler's Totiont function 
+It gives the no of integers from {1,2,3....n} which are coprime to n
+
+E(n) = n * (multiply [for all prime factors of n](1 - 1/p) )
+
+The formula basically says that the value of ?(n) is equal to n multiplied by product of (1 – 1/p) for all prime factors p of n. For example value of ?(6) = 6 * (1-1/2) * (1 – 1/3) = 2.
+
+*******************************************************************************************************
+				Modulo multiplicative Inverse(MMI):
+
+In mathematics, modular multiplicative inverse of an integer ‘a’ is an integer ‘x’ such that the product (a*x) is congruent to 1 with respect to the modulus m.
+				ax = 1( mod m) 
+The remainder after dividing ax by the integer m is 1.
+
+To perform :    z = (x/y) % M
+
+		y_inv = findMMI(y, m)
+		z = (x * y_inv) % m
+
+		Formally y_inv  = y^(m-2) % m   only when m is prime

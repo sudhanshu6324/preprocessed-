@@ -1,0 +1,9 @@
+class TrieNode {
+public:
+    bool word;
+    TrieNode* children[26]{}; // This allocates memory for it's children
+    TrieNode() {
+        word = false;
+        memset(children, NULL, sizeof(children));
+    }
+};

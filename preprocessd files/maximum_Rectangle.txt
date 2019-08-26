@@ -1,0 +1,41 @@
+class Solution {
+public:
+    int maximalRectangle(vector<vector<char>>& M) {
+        int n = M.size();
+        if(n == 0){
+            return 0;
+        }
+        int m=M[0].size(),i,j;
+        if(m == 0){
+            return 0;
+        }
+        int maxi = 0;
+        int h[m+1];
+        memset(h,0,sizeof h);
+        
+        for(i=0;i<n;i++){
+            for(j=0;j<m;j++){
+                if(M[i][j] == '1'){
+                    h[j] += 1;
+                }else{
+                    h[j] = 0;
+                }
+            }
+            stack<int> s;
+            for(j=0;j<=m;j++){
+                if(s.empty() || h[s.top()]<=h[j]){
+                    s.push(j);
+                }else{
+                    while(!s.empty() && h[s.top()] > h[j]){
+                        int t = s.top();
+                        s.pop();
+                        maxi = max(maxi,h[t]*(s.empty()?j:j-s.top()-1));
+                    }
+                    s.push(j);
+                }
+            }
+	    
+        }
+        return maxi;
+    }
+};

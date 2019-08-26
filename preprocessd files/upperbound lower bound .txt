@@ -1,0 +1,4 @@
+ans = lower_bound(x)
+then (n - ans) gives no of elements greater or equal to x
+ans = upper_bound(y)
+then (ans) gives no of elements less or equal to y

@@ -1,0 +1,8 @@
+// one solution
+F(2*n-1)=F(n)*F(n)+F(n-1)*F(n-1)
+F(2*n)=(2*F(n-1)+F(n))*F(n).
+
+// another solution f(n) nth fibonnacci no
+// very interesting 
+// better and easier to implement
+f(1)+f(2)+f(3)+... + f(n) = f(n+2)-1 

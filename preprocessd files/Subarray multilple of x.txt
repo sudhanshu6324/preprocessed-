@@ -1,0 +1,21 @@
+Today I came through this really nice question:
+
+Given an array A, find the subarray with sum of elements being multiple of n.
+			Subarray with sum equal to multiple of n
+
+
+Algorithm:
+
+a. Find sum array of A modulo n. O(n)
+b. Keep an initial entry 0 in a hash map with corresponding index -1.
+b. Traverse sum array, keep elements along with their indexes into the map.
+c. If you get same value more than once, then the array between the current index (including the current index) and the previous index (not including the previous index) is the required sub array.
+
+Time complexity : O(n)
+Space complexity : O(n)
+
+For eg. say array is [1, 4, 6, 3, 2]
+So sum sub array module n would be [1, 0, 1, 4, 1]
+No the hash map was initially (0, -1)
+ after traversing the 0th index, it become (0, -1), (1, 0)
+When it comes to the second index, the entry is 0. This entry is already present in the map. So required sub array will be from index (-1+1)=0 to index 1. i.e. the required sub array is [1, 4]

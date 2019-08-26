@@ -1,0 +1,10 @@
+multiset<int> s;
+multiset<int>::reverse_iterator it;
+
+
+for(it=s.rbegin();it!=s.rend();){
+        x = *;
+        s.erase( --(it.base()) );
+}
+
+
